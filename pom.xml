@@ -10,6 +10,7 @@
     <version>1.0</version>
     <modules>
         <module>zookeeper</module>
+        <module>common</module>
     </modules>
     <dependencies>
 
