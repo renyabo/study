@@ -12,6 +12,7 @@
         <module>zookeeper</module>
         <module>common</module>
         <module>service</module>
+        <module>servers</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
