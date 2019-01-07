@@ -12,7 +12,8 @@ public class TestServiceImpl implements TestService {
     public Result<String> test(String in) {
         Result<String> result = new Result<>();
         result.setCode(Code.SUCCESS);
-        result.setData(String.format("in=%s,thread=%s,host=%s", in, Thread.currentThread(), LocalIpAddressUtil.resolveLocalAddresses()));
+        result.setData(Thread.currentThread().getName());
+//        result.setData(String.format("in=%s,thread=%s,host=%s", in, Thread.currentThread(), LocalIpAddressUtil.resolveLocalAddresses()));
         return result;
     }
 }

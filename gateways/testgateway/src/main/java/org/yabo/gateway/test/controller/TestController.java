@@ -17,6 +17,6 @@ public class TestController {
     public String test() {
         System.out.println("call in,thread=" + Thread.currentThread().toString());
         Result<String> test = testService.test(Thread.currentThread().toString());
-        return JSON.toJSONString(test);
+        return test.getData();
     }
 }
