@@ -13,6 +13,7 @@
         <module>common</module>
         <module>service</module>
         <module>servers</module>
+        <module>gateways</module>
     </modules>
 
     <properties>
@@ -35,6 +36,7 @@
         <netty.version>4.1.31.Final</netty.version>
         <javaassist.version>3.21.0-GA</javaassist.version>
         <dubbo.version>2.6.5</dubbo.version>
+        <fastjson.version>1.2.54</fastjson.version>
     </properties>
 
     <dependencies>
@@ -110,6 +112,11 @@
                 <groupId>com.101tec</groupId>
                 <artifactId>zkclient</artifactId>
                 <version>${zkclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
