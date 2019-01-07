@@ -7,6 +7,22 @@ public class Result<T> implements Serializable {
     private String message;
     private T data;
 
+    public static <T> Result<T> of(T t) {
+        Result<T> result = new Result<>();
+        result.data = t;
+        return result;
+    }
+
+    public Result<T> message(String msg) {
+        message = msg;
+        return this;
+    }
+
+    public Result<T> code(Integer code) {
+        this.code = code;
+        return this;
+    }
+
     public Integer getCode() {
         return code;
     }
