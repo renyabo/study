@@ -19,12 +19,10 @@
         <dependency>
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
-            <version>0.11</version>
         </dependency>
         <dependency>
             <groupId>org.yabo</groupId>
             <artifactId>common</artifactId>
-            <version>1.0</version>
         </dependency>
     </dependencies>
     <build>
