@@ -33,7 +33,7 @@ public class CacheController {
         User user = new User();
         user.setId(idGen++);
         user.setDescription("yabo");
-        user.setUser_name("yabo");
+        user.setUserName("yabo");
         response.setData(userDAO.insert(user));
         response.setMessage("success");
         return response;

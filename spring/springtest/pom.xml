@@ -11,5 +11,10 @@
 
     <artifactId>springtest</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.yabo</groupId>
+            <artifactId>repository</artifactId>
+        </dependency>
+    </dependencies>
 </project>

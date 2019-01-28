@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.yabo.repository.mapper.UserMapper">
+    <resultMap id="userResultMap" type="org.yabo.common.beans.User">
+        <result column="id" property="id" javaType="java.lang.Long" jdbcType="BIGINT"/>
+        <result column="user_name" property="userName" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        <result column="description" property="description" javaType="java.lang.String" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="User">
+        `user_name`,`description`
+    </sql>
+
+    <insert id="insert" parameterType="org.yabo.common.beans.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO `user`
+        <include refid="User"/>
+        WHERE (#{userName},#{description})
+    </insert>
+
+</mapper>

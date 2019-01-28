@@ -15,6 +15,7 @@
         <module>servers</module>
         <module>gateways</module>
         <module>spring</module>
+        <module>repository</module>
     </modules>
 
     <properties>
@@ -31,7 +32,7 @@
         <commons.io.version>2.6</commons.io.version>
         <log4j.version>1.2.17</log4j.version>
         <commons.collections4.version>4.2</commons.collections4.version>
-        <junit.version>4.2</junit.version>
+        <junit.version>4.12</junit.version>
         <zkclient.version>0.11</zkclient.version>
         <curator.framework.version>4.1.0</curator.framework.version>
         <netty.version>4.1.31.Final</netty.version>
@@ -42,6 +43,7 @@
         <druid.version>1.1.12</druid.version>
         <study.service.version>1.0</study.service.version>
         <study.common.version>1.0</study.common.version>
+        <study.repository.version>1.0</study.repository.version>
     </properties>
 
     <!--<parent>-->
@@ -74,6 +76,11 @@
                 <groupId>org.yabo</groupId>
                 <artifactId>service</artifactId>
                 <version>${yabo.service.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.yabo</groupId>
+                <artifactId>repository</artifactId>
+                <version>${study.repository.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.yabo</groupId>
@@ -132,6 +139,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
