@@ -1,6 +1,4 @@
-package org.yabo.common.Util;
-
-import org.apache.commons.collections4.CollectionUtils;
+package org.yabo.common.util;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;

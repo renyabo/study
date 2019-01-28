@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>cache</module>
+        <module>springtest</module>
     </modules>
     <artifactId>spring</artifactId>
 
