@@ -13,8 +13,8 @@
 
     <insert id="insert" parameterType="org.yabo.common.beans.User" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO `user`
-        <include refid="User"/>
-        WHERE (#{userName},#{description})
+        (<include refid="User"/>)
+        VALUES (#{userName},#{description})
     </insert>
 
 </mapper>
