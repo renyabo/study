@@ -148,4 +148,31 @@
         </dependencies>
     </dependencyManagement>
 
+    <profiles>
+        <profile>
+            <id>yabo</id>
+            <properties>
+                <env>online</env>
+                <template>template</template>
+                <image.skip>true</image.skip>
+                <zk.address>172.16.61.128:2181</zk.address>
+                <dubbo.zk.address>zookeeper://172.16.61.128:2181</dubbo.zk.address>
+                <log.console>consoleAppender</log.console>
+                <pandora.log.level>DEBUG</pandora.log.level>
+                <log4j.pattern>[%-5p]%d{ISO8601},[%t][%c{3}:%L]%m%n</log4j.pattern>
+                <log4j.pattern.no.linenum>[%-5p]%d{ISO8601},[%t][%c{3}]%m%n</log4j.pattern.no.linenum>
+                <log.root.path>./logs</log.root.path>
+                <db.driver>com.mysql.cj.jdbc.Driver</db.driver>
+                <db.url>jdbc:mysql://172.16.61.128:3306/yabo?useUnicode=true&amp;characterEncoding=utf-8</db.url>
+                <db.username>root</db.username>
+                <db.password>123456</db.password>
+                <eureka.client.serviceUrl.defaultZone>
+                    http://127.0.0.1:7999/eureka/
+                </eureka.client.serviceUrl.defaultZone>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 </project>
