@@ -41,11 +41,8 @@ public class Controller {
     private void doDeathLock() {
         taskManager.getExecutor().execute(() -> {
             synchronized (Controller.class) {
-                System.out.println("lock...");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                while (true) {
+                    System.out.println("lock..." + Thread.currentThread());
                 }
             }
         });

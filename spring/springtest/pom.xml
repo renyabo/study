@@ -17,4 +17,48 @@
             <artifactId>repository</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- META-INF/MANIFEST.MF 添加 Main-Class: -->
+                            <mainClass>org.yabo.spring.test.Application</mainClass>
+
+                            <!-- META-INF/MANIFEST.MF 添加 ClassPath: 外部依赖指定  -->
+                            <addClasspath>true</addClasspath>
+
+                            <!-- META-INF/MANIFEST.MF : 指定依赖包所在目录前缀 -->
+                            <classpathPrefix>./lib</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- 自动实现将依赖拷贝到 lib 目录下，不然需要手动的执行-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>target/lib</outputDirectory>
+                            <excludeTransitive>false</excludeTransitive>
+                            <stripVersion>true</stripVersion>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

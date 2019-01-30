@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Hello world!
+ * 命令行启动： java -cp ./classes:./lib/* org.yabo.zookeeper.App
  */
 public class App {
     public static void main(String[] args) {
