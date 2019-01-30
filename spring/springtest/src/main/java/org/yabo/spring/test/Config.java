@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.yabo.common.util.TaskManager;
 
 @Configuration
 public class Config {
@@ -16,6 +17,10 @@ public class Config {
 //        return new PropertySourcesPlaceholderConfigurer();
 //    }
 
+    @Bean
+    public TaskManager getTaskManager() {
+        return new TaskManager("springtest");
+    }
 //    @Bean
 //    public PropertyPlaceholderConfigurer robotPlaceholderConfigurer() {
 //        PropertyPlaceholderConfigurer configurer = new PropertyPlaceholderConfigurer();
