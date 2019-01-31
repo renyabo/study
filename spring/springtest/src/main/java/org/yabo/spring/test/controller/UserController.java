@@ -8,14 +8,16 @@ import org.yabo.common.beans.User;
 import org.yabo.common.util.TaskManager;
 import org.yabo.repository.mapper.UserMapper;
 
+import java.util.List;
+
 @RestController
-public class Controller {
+public class UserController {
 
     UserMapper userMapper;
     TaskManager taskManager;
 
-    public Controller(@Autowired UserMapper userMapper,
-                      @Autowired TaskManager taskManager) {
+    public UserController(@Autowired UserMapper userMapper,
+                          @Autowired TaskManager taskManager) {
         this.userMapper = userMapper;
         this.taskManager = taskManager;
     }
@@ -30,6 +32,15 @@ public class Controller {
         return response;
     }
 
+    @RequestMapping("/list")
+    public Response list() {
+        Response response = new Response();
+        List<User> query = userMapper.query();
+        response.setMessage("SUCCESS");
+        response.setData(query);
+        return response;
+    }
+
     @RequestMapping("/deathLock")
     public Response deathLock() {
         Response response = new Response();
@@ -40,7 +51,7 @@ public class Controller {
 
     private void doDeathLock() {
         taskManager.getExecutor().execute(() -> {
-            synchronized (Controller.class) {
+            synchronized (UserController.class) {
                 while (true) {
                     System.out.println("lock..." + Thread.currentThread());
                 }

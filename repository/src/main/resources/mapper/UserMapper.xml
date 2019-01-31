@@ -17,4 +17,10 @@
         VALUES (#{userName},#{description})
     </insert>
 
+    <select id="query" resultMap="userResultMap">
+        SELECT `id`,
+        <include refid="User"/>
+        FROM `user`ßß
+    </select>
+
 </mapper>
