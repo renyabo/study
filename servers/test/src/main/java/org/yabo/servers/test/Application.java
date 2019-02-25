@@ -7,6 +7,7 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 @SpringBootApplication
 @ImportResource("classpath:dubbo.xml")
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.PropertySource;
 public class Application {
 
     private static final Logger LOGGER = Logger.getLogger(Application.class);
+    JpaRepository jpaRepository;
 
     public static void main(String[] args) {
         LOGGER.debug("start..");

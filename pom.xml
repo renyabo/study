@@ -16,6 +16,7 @@
         <module>gateways</module>
         <module>spring</module>
         <module>repository</module>
+        <module>filter</module>
     </modules>
 
     <properties>
