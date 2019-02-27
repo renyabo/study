@@ -8,5 +8,5 @@ import java.lang.annotation.*;
 public @interface CheckEntity {
     String message() default "Check entity msg";
 
-    String key() default "#id";
+    String key();
 }

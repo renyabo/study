@@ -1,4 +1,4 @@
-package org.yabo.spring.test.aspect;
+package org.yabo.repository.aspect;
 
 import org.springframework.aop.support.AopUtils;
 import org.springframework.context.expression.AnnotatedElementKey;

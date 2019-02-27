@@ -20,7 +20,18 @@
     <select id="query" resultMap="userResultMap">
         SELECT `id`,
         <include refid="User"/>
-        FROM `user`ßß
+        FROM `user`
     </select>
+
+    <select id="queryById" resultMap="userResultMap">
+        SELECT `id`,
+        <include refid="User"/>
+        FROM `user`
+        WHERE `id`=#{id}
+    </select>
+
+    <delete id="deleteById">
+        DELETE FROM `user` WHERE `id`=#{id}
+    </delete>
 
 </mapper>

@@ -8,7 +8,7 @@ import org.yabo.common.beans.Company;
 import org.yabo.common.beans.User;
 import org.yabo.common.util.TaskManager;
 import org.yabo.repository.mapper.UserMapper;
-import org.yabo.spring.test.aspect.MyService;
+import org.yabo.spring.test.service.MyService;
 
 import java.util.List;
 
@@ -25,6 +25,13 @@ public class UserController {
         this.userMapper = userMapper;
         this.taskManager = taskManager;
         this.myService = myService;
+    }
+
+    @RequestMapping("/queryById")
+    public Response queryById(Long id) {
+        Response response = new Response();
+        response.setData(userMapper.queryById(id));
+        return response;
     }
 
     @RequestMapping("/anno")

@@ -1,4 +1,4 @@
-package org.yabo.spring.test.aspect;
+package org.yabo.spring.test.service;
 
 import org.springframework.stereotype.Service;
 import org.yabo.common.anno.CheckEntity;

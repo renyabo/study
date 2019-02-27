@@ -1,4 +1,4 @@
-package org.yabo.spring.test.aspect;
+package org.yabo.repository.aspect;
 
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
@@ -7,12 +7,10 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.context.expression.AnnotatedElementKey;
 import org.springframework.expression.EvaluationContext;
-import org.springframework.stereotype.Component;
 import org.yabo.common.anno.CheckEntity;
 
 import java.lang.reflect.Method;
 
-@Component
 @Aspect
 public class CheckEntityAspect {
     protected final Logger logger = Logger.getLogger(CheckEntityAspect.class);
@@ -21,6 +19,7 @@ public class CheckEntityAspect {
 
     @Before("execution(* *.*(..)) && @annotation(checkEntity)")
     public void checkEntity(JoinPoint joinPoint, CheckEntity checkEntity) {
+        System.out.println("in check entity aspect..");
         Long result = getValue(joinPoint, checkEntity.key());
         logger.info("result: " + result);
         System.out.println("running entity check: " + joinPoint.getSignature().getName());

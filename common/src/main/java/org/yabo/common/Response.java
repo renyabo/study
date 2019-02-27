@@ -7,6 +7,11 @@ public class Response implements Serializable {
     private String message;
     private Object data;
 
+    public Response() {
+        code = Code.SUCCESS;
+        message = "SUCCESS";
+    }
+
     public Integer getCode() {
         return code;
     }

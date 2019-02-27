@@ -1,4 +1,4 @@
-package org.yabo.spring.test.aspect;
+package org.yabo.repository.aspect;
 
 public class ExpressionRootObject {
 

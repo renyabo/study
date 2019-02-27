@@ -17,6 +17,7 @@
         <module>spring</module>
         <module>repository</module>
         <module>filter</module>
+        <module>yache</module>
     </modules>
 
     <properties>
@@ -45,6 +46,8 @@
         <study.service.version>1.0</study.service.version>
         <study.common.version>1.0</study.common.version>
         <study.repository.version>1.0</study.repository.version>
+        <study.yache.version>1.0</study.yache.version>
+        <jedis.version>2.1.0</jedis.version>
     </properties>
 
     <!--<parent>-->
@@ -73,6 +76,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+            <!--<dependency>-->
+                <!--<groupId>redis.clients</groupId>-->
+                <!--<artifactId>jedis</artifactId>-->
+                <!--<version>${jedis.version}</version>-->
+            <!--</dependency>-->
+
             <dependency>
                 <groupId>org.yabo</groupId>
                 <artifactId>service</artifactId>
@@ -82,6 +92,11 @@
                 <groupId>org.yabo</groupId>
                 <artifactId>repository</artifactId>
                 <version>${study.repository.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.yabo</groupId>
+                <artifactId>yache</artifactId>
+                <version>${study.yache.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.yabo</groupId>
