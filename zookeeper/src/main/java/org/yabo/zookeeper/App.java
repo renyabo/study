@@ -1,9 +1,7 @@
 package org.yabo.zookeeper;
 
 import org.I0Itec.zkclient.*;
-import org.apache.commons.collections4.CollectionUtils;
 import org.apache.zookeeper.Watcher;
-import org.yabo.common.Define;
 import org.yabo.common.Result;
 
 import java.util.List;
@@ -15,8 +13,8 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello World!");
-        ZkClient client = new ZkClient("172.16.61.128:2181");
-//        client.createPersistent("/renyabo", "data");
+        ZkClient client = new ZkClient("localhost:2181,localhost:2182,localhost:2183");
+        client.createPersistent("/renyabo", "data");
         client.subscribeChildChanges("/renyabo", (parentPath, currentChilds) ->
                 System.out.println(String.format("child changes,parentPath=%s,currentChilds=%s", parentPath, currentChilds)));
         client.subscribeDataChanges("/renyabo", new IZkDataListener() {

@@ -30,6 +30,12 @@
         WHERE `id`=#{id}
     </select>
 
+    <update id="updateNameById">
+        UPDATE `user`
+        SET `user_name`=#{userName}
+        WHERE `id`=#{id}
+    </update>
+
     <delete id="deleteById">
         DELETE FROM `user` WHERE `id`=#{id}
     </delete>

@@ -19,6 +19,9 @@ public interface UserMapper {
     @CheckEntity(key = "#root.args[0]")
     User queryById(@Param("id") Long id);
 
+    @CheckEntity(key = "root.args[0]")
+    int updateNameById(@Param("id") Long id, @Param("userName") String userName);
+
     @CheckEntity(key = "#root.args[0]")
     int deleteById(@Param("id") Long id);
 }

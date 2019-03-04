@@ -2,6 +2,7 @@ package org.yabo.repository;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.logging.log4j2.Log4j2Impl;
+import org.apache.ibatis.logging.stdout.StdOutImpl;
 import org.apache.log4j.Logger;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -42,6 +43,7 @@ public class DBConfig {
         org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
         configuration.setUseGeneratedKeys(true);
         configuration.setCacheEnabled(false);
+//        configuration.setLogImpl(StdOutImpl.class);
         configuration.setLogImpl(Log4j2Impl.class);
         return configuration;
     }
@@ -65,7 +67,7 @@ public class DBConfig {
     }
 
     @Bean
-    public CheckEntityAspect checkEntityAspect(){
+    public CheckEntityAspect checkEntityAspect() {
         return new CheckEntityAspect();
     }
 }

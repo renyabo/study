@@ -1,5 +1,6 @@
 package org.yabo.spring.test.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +16,8 @@ import java.util.List;
 @RestController
 public class UserController {
 
+    Logger logger = Logger.getLogger(UserController.class);
+
     UserMapper userMapper;
     TaskManager taskManager;
     MyService myService;
@@ -29,6 +32,7 @@ public class UserController {
 
     @RequestMapping("/queryById")
     public Response queryById(Long id) {
+        logger.debug("query,id=" + id);
         Response response = new Response();
         response.setData(userMapper.queryById(id));
         return response;
