@@ -6,6 +6,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -72,11 +73,23 @@ public class CloudKnowledgeExcelParser {
     }
 
     private static void save(List<RowValues> rowValues) throws Exception {
-        File file = new File("/Users/yabo.ren/upload.xlsx");
+        File file = new File("/Users/yabo.ren/cloudKnowledge.xlsx");
         XSSFWorkbook workbook = new XSSFWorkbook();
         creatCategory(workbook.createSheet("知识库五级分类"), getCategoryPath(rowValues));
         createKnowledge(workbook.createSheet("知识库"), rowValues);
+        createUpdate(workbook.createSheet("改"));
+        createDel(workbook.createSheet("删"));
         workbook.write(new FileOutputStream(file));
+    }
+
+    private static void createDel(XSSFSheet sheet) {
+        XSSFRow row = sheet.createRow(0);
+        createCell(row, 0, "标准问题", "修改后的值", "一级类目（非必填）", "二级类目（非必填）", "三级类目（非必填）", "四级类目（非必填）", "五级类目（非必填）", "一级行业", "二级行业");
+    }
+
+    private static void createUpdate(XSSFSheet sheet) {
+        XSSFRow row = sheet.createRow(0);
+        createCell(row, 0, "标准问题", "修改后的值", "一级类目（非必填）", "二级类目（非必填）", "三级类目（非必填）", "四级类目（非必填）", "五级类目（非必填）", "一级行业", "二级行业");
     }
 
     private static void createKnowledge(XSSFSheet sheet, List<RowValues> rowValues) {
