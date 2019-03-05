@@ -73,7 +73,7 @@ public class CloudKnowledgeExcelParser {
     }
 
     private static void save(List<RowValues> rowValues) throws Exception {
-        File file = new File("/Users/yabo.ren/cloudKnowledge.xlsx");
+        File file = new File("/Users/yabo.ren/upload.xlsx");
         XSSFWorkbook workbook = new XSSFWorkbook();
         creatCategory(workbook.createSheet("知识库五级分类"), getCategoryPath(rowValues));
         createKnowledge(workbook.createSheet("知识库"), rowValues);
@@ -96,11 +96,11 @@ public class CloudKnowledgeExcelParser {
         int maxSimilarLength = getSimilarMaxLength(rowValues);
         List<String> headerList = new ArrayList<>();
         headerList.add("标准问题");
-        for (int i = 0; i <= maxSimilarLength; i++) {
+        for (int i = 0; i < maxSimilarLength; i++) {
             headerList.add("相似问法" + (i + 1));
         }
         headerList.add("一级行业");
-//        headerList.add("二级行业");
+        headerList.add("二级行业");
         headerList.add("一级分类");
         headerList.add("二级分类");
         headerList.add("三级分类");
@@ -116,8 +116,9 @@ public class CloudKnowledgeExcelParser {
             createCell(row, j++, value.standard);
             createCell(row, j, toArray(value.similars));
             j += maxSimilarLength;
-            createCell(row, j++, value.industry);
-            createCell(row, j, toArray(value.categories));
+            System.out.println(j);
+            createCell(row, j, "教育", value.industry);
+            createCell(row, j + 2, toArray(value.categories));
         }
     }
 
