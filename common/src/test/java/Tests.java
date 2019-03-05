@@ -54,6 +54,23 @@ public class Tests {
         }
     }
 
+    @Test
+    public void finallyTest() {
+        A a = f();
+        System.out.println(a.n);
+    }
+
+    private A f() {
+        A a = null;
+        try {
+            a = new A();
+            a.n = 3333;
+            return a;
+        } finally {
+            System.out.println(a != null ? a.n : null);
+        }
+    }
+
     class Helper {
         Map<Integer, A> map = new HashMap<>();
 

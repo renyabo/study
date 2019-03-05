@@ -18,6 +18,7 @@
         <module>repository</module>
         <module>filter</module>
         <module>yache</module>
+        <module>utils</module>
     </modules>
 
     <properties>
@@ -70,6 +71,14 @@
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>27.0.1-jre</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>commons-io</groupId>
