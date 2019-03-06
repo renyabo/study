@@ -31,7 +31,7 @@ public class ExpressionEvaluator<T> extends CachedExpressionEvaluator {
                                                      Method method, Object[] args) {
 
         Method targetMethod = getTargetMethod(targetClass, method);
-        ExpressionRootObject root = new ExpressionRootObject(object, args);
+        ExpressionRootObject root = new ExpressionRootObject(targetMethod, args, object, targetClass);
         return new MethodBasedEvaluationContext(root, targetMethod, args, this.paramNameDiscoverer);
     }
 

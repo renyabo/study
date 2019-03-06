@@ -3,6 +3,7 @@ package org.yabo.spring.test.controller;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.yabo.common.Response;
 import org.yabo.common.beans.Company;
@@ -35,6 +36,15 @@ public class UserController {
         logger.debug("query,id=" + id);
         Response response = new Response();
         response.setData(userMapper.queryById(id));
+        return response;
+    }
+
+    @RequestMapping("/updateNameById")
+    public Response updateNameById(@RequestParam(name = "id") Long id,
+                                   @RequestParam(name = "userName") String userName) {
+        logger.debug("query,id=" + id);
+        Response response = new Response();
+        response.setData(userMapper.updateNameById(id, userName));
         return response;
     }
 
