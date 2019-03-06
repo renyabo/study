@@ -4,6 +4,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.cache.annotation.Cacheable;
 import org.yabo.common.anno.CheckEntity;
 import org.yabo.common.beans.User;
+import org.yabo.common.util.SysConfig;
+import org.yabo.repository.aspect.CacheUtil;
 
 import java.util.List;
 
@@ -13,7 +15,7 @@ public interface UserMapper {
 
     List<User> query();
 
-    @Cacheable(value = "user", key = "#root.args[0]")
+    @Cacheable(value = "user", key = "#root.args[0]", condition = "@cacheUtil.canUseCache()")
     User queryById(@Param("id") Long id);
 
 //    @CheckEntity(key = "#root.args[0]")

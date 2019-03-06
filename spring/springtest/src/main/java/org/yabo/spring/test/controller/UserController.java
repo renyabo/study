@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.yabo.common.Response;
 import org.yabo.common.beans.Company;
 import org.yabo.common.beans.User;
+import org.yabo.common.util.SysConfig;
 import org.yabo.common.util.TaskManager;
+import org.yabo.repository.aspect.CacheUtil;
 import org.yabo.repository.mapper.UserMapper;
 import org.yabo.spring.test.service.MyService;
 
@@ -29,6 +31,21 @@ public class UserController {
         this.userMapper = userMapper;
         this.taskManager = taskManager;
         this.myService = myService;
+    }
+
+    @RequestMapping("/condition")
+    public Response condition(Long id) {
+        Response response = new Response();
+        response.setData(myService.condition(id));
+        return response;
+    }
+
+    @RequestMapping("/set")
+    public Response condition(String key, String value) {
+        Response response = new Response();
+        SysConfig.getSysConfig().set(key, value);
+        response.setData(SysConfig.getSysConfig().getString(key));
+        return response;
     }
 
     @RequestMapping("/queryById")

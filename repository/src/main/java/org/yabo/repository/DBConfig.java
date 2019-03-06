@@ -13,6 +13,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.yabo.repository.aspect.CacheUtil;
 import org.yabo.repository.aspect.CheckEntityAspect;
 
 import javax.sql.DataSource;
@@ -69,5 +70,10 @@ public class DBConfig {
     @Bean
     public CheckEntityAspect checkEntityAspect() {
         return new CheckEntityAspect();
+    }
+
+    @Bean("cacheUtil")
+    public CacheUtil getCacheUtil() {
+        return new CacheUtil();
     }
 }
