@@ -19,6 +19,7 @@
         <module>filter</module>
         <module>yache</module>
         <module>utils</module>
+        <module>yttp</module>
     </modules>
 
     <properties>
