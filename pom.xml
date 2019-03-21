@@ -20,6 +20,7 @@
         <module>yache</module>
         <module>utils</module>
         <module>yttp</module>
+        <module>wife</module>
     </modules>
 
     <properties>
