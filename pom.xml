@@ -21,6 +21,7 @@
         <module>utils</module>
         <module>yttp</module>
         <module>wife</module>
+        <module>fsm</module>
     </modules>
 
     <properties>
