@@ -33,8 +33,8 @@ public class Controller {
     public Response update() {
         Collection<Transition<States, Events>> transitions = stateMachine.getTransitions();
         System.out.println(transitions);
-        Transition<States,Events> transition=new DefaultExternalTransition<>()
-        transitions.add()
+//        Transition<States,Events> transition=new DefaultExternalTransition<>();
+//        transitions.add();
         Response response = new Response();
         response.setData("OK");
         return response;
