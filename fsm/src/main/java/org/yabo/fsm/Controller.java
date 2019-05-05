@@ -35,6 +35,7 @@ public class Controller {
         System.out.println(transitions);
 //        Transition<States,Events> transition=new DefaultExternalTransition<>();
 //        transitions.add();
+        System.out.println("test");
         Response response = new Response();
         response.setData("OK");
         return response;
