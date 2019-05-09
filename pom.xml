@@ -23,6 +23,7 @@
         <module>wife</module>
         <module>fsm</module>
         <module>ws</module>
+        <module>netty</module>
     </modules>
 
     <properties>
