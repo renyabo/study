@@ -23,7 +23,7 @@ spring:
 #    cachePrepStmts: true  # 开启二级缓存
   redis:
     database:  0
-    host:  172.16.61.128
+    host:  192.168.115.129
     port:  6379
     password:
 #    pool:

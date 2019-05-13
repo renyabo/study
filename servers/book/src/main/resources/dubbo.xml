@@ -9,7 +9,7 @@
         <dubbo:parameter key="qos.accept.foreign.ip" value="false"/>
         <dubbo:parameter key="qos.port" value="33333"/>
     </dubbo:application>
-    <dubbo:registry address="zookeeper://172.16.61.128:2181" check="false" version="1.0"
+    <dubbo:registry address="zookeeper://192.168.115.129:2181" check="false" version="1.0"
                     timeout="3000"></dubbo:registry>
     <dubbo:protocol name="dubbo" port="20880"/>
     <!-- 要暴露的服务接口 -->

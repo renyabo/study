@@ -2,8 +2,8 @@ spring:
   datasource:
     name: db
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://172.16.61.128:3306/yabo?useUnicode=true&characterEncoding=utf-8
-    username: root
+    url: jdbc:mysql://192.168.115.129:3306/yabo?useUnicode=true&characterEncoding=utf-8
+    username: yabo
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
 #    minIdle: 5
@@ -23,7 +23,7 @@ spring:
 #    cachePrepStmts: true  # 开启二级缓存
   redis:
     database:  0
-    host:  172.16.61.128
+    host:  192.168.115.129
     port:  6379
     password:
 #    pool:
