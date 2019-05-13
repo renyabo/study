@@ -9,9 +9,10 @@ public class MysqlTest {
         //驱动程序名
         String driver = "com.mysql.cj.jdbc.Driver";
         //URL指向要访问的数据库名mydata
-        String url = "jdbc:mysql://192.168.115.129:3306";
+        String url = "jdbc:mysql://192.168.115.129:3306/yabo?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT";
+//        String url = "jdbc:mysql://:3306?";
         //MySQL配置时的用户名
-        String user = "root";
+        String user = "yabo";
         //MySQL配置时的密码
         String password = "123456";
         //遍历查询结果集

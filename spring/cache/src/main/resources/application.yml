@@ -2,10 +2,10 @@ spring:
   datasource:
     name: db
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://172.16.61.128:3306/yabo?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://192.168.115.129:3306/yabo?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
     username: root
     password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
 #    minIdle: 5
 #    maxActive: 100
 #    initialSize: 10
