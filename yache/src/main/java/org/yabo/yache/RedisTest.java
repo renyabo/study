@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class RedisTest {
     public static void main(String[] args) {
-        Jedis jedis = new Jedis("192.168.166.11", 6379);
+        Jedis jedis = new Jedis("192.168.115.128", 6379);
 //        String test = jedis.set("test", "1");
         Set<String> keys = jedis.keys("*");
         System.out.println(keys);
