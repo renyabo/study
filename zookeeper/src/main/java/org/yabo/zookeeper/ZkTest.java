@@ -6,8 +6,9 @@ import java.util.List;
 
 public class ZkTest {
     public static void main(String[] args) {
-        ZkClient client = new ZkClient("192.168.165.16:2181,192.168.165.17:2182,192.168.165.18:2183");
+        ZkClient client = new ZkClient("192.168.115.129:2181");
         dfs(client, "/");
+//        System.out.println(client.getChildren("/"));
         System.out.println("over...");
     }
 
