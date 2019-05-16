@@ -24,6 +24,7 @@
         <module>fsm</module>
         <module>ws</module>
         <module>netty</module>
+        <module>java-test</module>
     </modules>
 
     <properties>

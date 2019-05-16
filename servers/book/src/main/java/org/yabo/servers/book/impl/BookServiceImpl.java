@@ -14,6 +14,7 @@ public class BookServiceImpl implements BookService {
         book.setId(1L);
         book.setIsbn("isbn:" + isbn);
         book.setName("天龙八部");
+        book.setStatus(Book.Status.PAID);
         return Result.of(book).code(Code.SUCCESS).message("success");
     }
 }

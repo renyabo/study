@@ -18,6 +18,10 @@
             <artifactId>hystrix-core</artifactId>
             <version>1.5.18</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
         <!--&lt;!&ndash; https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxjava &ndash;&gt;-->
         <!--<dependency>-->
             <!--<groupId>io.reactivex.rxjava2</groupId>-->
