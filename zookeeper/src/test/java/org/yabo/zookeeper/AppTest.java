@@ -44,7 +44,7 @@ public class AppTest {
     }
 
     @Test
-    public void read(){
+    public void read() {
         ZkClient client = new ZkClient("localhost:2181,localhost:2182,localhost:2183");
         String string = client.readData("/renyabo/1");
         System.out.println(string);

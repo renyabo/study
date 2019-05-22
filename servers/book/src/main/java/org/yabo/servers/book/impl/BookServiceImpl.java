@@ -7,9 +7,10 @@ import org.yabo.common.beans.Book;
 import org.yabo.service.book.BookService;
 
 @Service("bookService")
-public class BookServiceImpl implements BookService {
+public class BookServiceImpl extends BookServiceAdapter {
     @Override
     public Result<Book> getBook(String isbn) {
+        super.test();
         Book book = new Book();
         book.setId(1L);
         book.setIsbn("isbn:" + isbn);
