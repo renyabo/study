@@ -14,10 +14,10 @@ public class Antibacterial {
     static SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd");
     static File PATH = new File("D:" + File.separator + "min");
     static final int MAX = 100;
-    static final String mz1 = "mz1.xls";
-    static final String mz2 = "mz2.xls";
-    static final String jz1 = "jz1.xls";
-    static final String jz2 = "jz2.xls";
+    static final String mz1 = "mz1.xlsx";
+    static final String mz2 = "mz2.xlsx";
+    static final String jz1 = "jz1.xlsx";
+    static final String jz2 = "jz2.xlsx";
     static Map<String, Set<String>> level = MedicineLevelUtil.getMedicineLevel();
 
     public static void main(String[] args) throws Exception {
