@@ -1,20 +1,30 @@
 package org.yabo.gateway.test.controller;
 
 import com.alibaba.fastjson.JSON;
+import org.apache.log4j.Logger;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.yabo.common.Response;
 import org.yabo.common.Result;
 import org.yabo.common.beans.Book;
 import org.yabo.service.book.BookService;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-public class TestController {
-//
+public class TestController implements ApplicationContextAware {
+
+    Logger logger = Logger.getLogger(this.getClass());
+    //
 //    @Autowired
 //    TestService testService;
     @Autowired
@@ -30,6 +40,7 @@ public class TestController {
 
     @RequestMapping("/book")
     public String book() {
+        logger.debug("x");
         Result<Book> book = bookService.getBook("xxxx");
         return JSON.toJSONString(book);
     }
@@ -53,4 +64,24 @@ public class TestController {
         return response;
     }
 
+    @RequestMapping("/getBeanDef")
+    public String get() {
+        String[] beanDefinitionNames = context.getBeanDefinitionNames();
+        return Arrays.toString(beanDefinitionNames);
+    }
+
+    @RequestMapping("/setBeanDef")
+    public String setBeanDef(String name) {
+        BeanFactory beanFactory = context.getParentBeanFactory();
+        AutowireCapableBeanFactory capableBeanFactory = context.getAutowireCapableBeanFactory();
+//        capableBeanFactory.ap
+        return "OK";
+    }
+
+    private ApplicationContext context;
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        context = applicationContext;
+    }
 }
