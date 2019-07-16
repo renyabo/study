@@ -1,9 +1,8 @@
 package org.yabo.yache;
 
-import org.springframework.util.CollectionUtils;
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import redis.clients.jedis.HostAndPort;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisCluster;
+import redis.clients.jedis.JedisSentinelPool;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,11 +17,23 @@ public class RedisTest {
         set.add(n1);
         set.add(n2);
         set.add(n3);
-        set.forEach(n->{
-            Jedis jedis = new Jedis(n.getHost(),n.getPort());
-            System.out.println(jedis);
-            System.out.println(jedis.get("tnp_sms_ORDER_CONFIRM_SMS_201905270069135"));
-        });
+
+
+
+        Set<String> sen=new HashSet<>();
+        sen.add("192.168.165.16:26379");
+        sen.add("192.168.165.17:26379");
+        sen.add("192.168.165.18:26379");
+        GenericObjectPoolConfig gPoolConfig=new GenericObjectPoolConfig();
+        gPoolConfig.setMaxIdle(10);
+        gPoolConfig.setMaxTotal(10);
+        gPoolConfig.setMaxWaitMillis(10);
+        gPoolConfig.setJmxEnabled(true);
+        JedisSentinelPool jSentinelPool=new JedisSentinelPool("master",sen,gPoolConfig);
+
+        System.out.println(jSentinelPool);
+
+
 //        JedisCluster jedisCluster = new JedisCluster(set);
 //        System.out.println(jedisCluster);
 //        String value = jedisCluster.get("tnp_sms_ORDER_CONFIRM_SMS_201905270069135");

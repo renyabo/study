@@ -1,10 +1,7 @@
 package org.yabo.spring.test;
 
-import com.alibaba.fastjson.JSON;
-import org.yabo.common.util.TaskManager;
-
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.yabo.spring.test.test.Service;
 
 public class Test {
 
@@ -15,9 +12,13 @@ public class Test {
 //            taskManager.getExecutor().execute(() -> System.out.println(Thread.currentThread()));
 //        }
 //        System.out.println("over");
-        String json="[{\"a\":1},{\"b\":2}]";
-        System.out.println(json);
-        Object parse = JSON.parse(json);
-        System.out.println(parse.getClass());
+//        String json="[{\"a\":1},{\"b\":2}]";
+//        System.out.println(json);
+//        Object parse = JSON.parse(json);
+//        System.out.println(parse.getClass());
+
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(TestConfig.class);
+        Service service = applicationContext.getBean(Service.class);
+        System.out.println(service);
     }
 }

@@ -17,6 +17,10 @@
             <artifactId>repository</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.yabo</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>

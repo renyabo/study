@@ -2,6 +2,7 @@ package org.yabo.spring.test.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +11,6 @@ import org.yabo.common.beans.Company;
 import org.yabo.common.beans.User;
 import org.yabo.common.util.SysConfig;
 import org.yabo.common.util.TaskManager;
-import org.yabo.repository.aspect.CacheUtil;
 import org.yabo.repository.mapper.UserMapper;
 import org.yabo.spring.test.service.MyService;
 
@@ -75,7 +75,7 @@ public class UserController {
     }
 
     @RequestMapping("/test")
-    public Response test() {
+    public Response test(@RequestBody User u) {
         Response response = new Response();
         User user = new User();
         user.setUserName("repo");
