@@ -1,10 +1,11 @@
 package org.yabo.utils.poi;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LeetCode14 {
 
-    class Node {
+    static class Node {
         Map<Character, Node> children = new HashMap<>();
     }
 

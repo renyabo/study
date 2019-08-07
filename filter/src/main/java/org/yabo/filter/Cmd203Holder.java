@@ -8,7 +8,7 @@ import java.util.List;
 public class Cmd203Holder {
 
     //mix_reply条目
-    private  class Item {
+    private static class Item {
         private String label;//问题
         private String score;
         private String style;
@@ -66,7 +66,7 @@ public class Cmd203Holder {
     }
 
     //mix_reply回复
-    private  class MixReply {
+    private static class MixReply {
         private String id;//mix_reply
         private String label;
         private Float version;

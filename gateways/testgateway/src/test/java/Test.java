@@ -1,6 +1,5 @@
 import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
-import org.yabo.common.beans.Book;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ public class Test {
     }
 
 
-    class A {
+    static class A {
         String a;
         Long b;
         Integer c;
@@ -64,7 +63,7 @@ public class Test {
         }
     }
 
-    class B {
+    static class B {
         String a;
         Long b;
         Integer c;
@@ -118,7 +117,7 @@ public class Test {
         a.a = "a";
         a.b = 1L;
         a.c = 3;
-        a.list=new ArrayList<>();
+        a.list = new ArrayList<>();
         a.list.add(1);
         a.list.add(2);
         a.list.add(3);

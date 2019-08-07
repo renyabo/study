@@ -26,6 +26,10 @@
         <module>netty</module>
         <module>java-test</module>
         <module>http</module>
+        <module>sharding</module>
+        <module>mybatis</module>
+        <module>dubbo-filter-starter</module>
+        <module>aop-test</module>
     </modules>
 
     <properties>

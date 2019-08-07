@@ -11,6 +11,6 @@
     </dubbo:application>
     <dubbo:registry address="zookeeper://192.168.115.129:2181" check="false" version="1.0"
                     timeout="3000"></dubbo:registry>
-    <dubbo:reference id="testService" interface="org.yabo.service.test.TestService"/>
-    <dubbo:reference id="bookService" interface="org.yabo.service.book.BookService"/>
+<!--    <dubbo:reference id="testService" interface="org.yabo.service.test.TestService"/>-->
+    <dubbo:reference id="bookService" interface="org.yabo.service.book.BookChildService"/>
 </beans>

@@ -1,17 +1,14 @@
 import org.junit.Test;
-import org.yabo.common.util.TaskManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CountDownLatch;
 
 public class Tests {
     @Test
     public void test() throws Exception {
-        TaskManager manager = new TaskManager();
+//        TaskManager manager = new TaskManager();
 //        Map<Integer, Integer> map = new HashMap<>();
 //        int size=10000;
 //        CountDownLatch latch=new CountDownLatch(size);
@@ -43,7 +40,7 @@ public class Tests {
 //        }
     }
 
-    class A {
+    static class A {
         Integer n = 0;
 
         @Override
@@ -83,7 +80,7 @@ public class Tests {
         }
     }
 
-    class B {
+    static class B {
         Integer filter;
 
         public B(Integer filter) {

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="u1" class="org.yabo.common.beans.User">
+        <property name="userName" value="u1"/>
+        <property name="description" value="d1"/>
+        <property name="id" value="1"/>
+    </bean>
+    <bean id="u2" class="org.yabo.common.beans.User">
+        <property name="userName" value="u2"/>
+        <property name="description" value="d2"/>
+        <property name="id" value="2"/>
+    </bean>
+    <bean id="book" class="org.yabo.common.beans.Book">
+        <property name="name" value="book"/>
+        <property name="id" value="4"/>
+    </bean>
+
+    <bean id="service" class="org.yabo.spring.test.service.MapService">
+
+
+        <constructor-arg index="0">
+            <map>
+                <entry key="u1" value-ref="u1"/>
+                <entry key="u2" value-ref="u2"/>
+            </map>
+        </constructor-arg>
+        <constructor-arg index="1" ref="book"/>
+        <constructor-arg index="2" value="dsfsfs"/>
+        <constructor-arg index="3">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+</beans>

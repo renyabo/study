@@ -20,6 +20,11 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.yabo</groupId>
+            <artifactId>dubbo-filter-starter</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
 </project>
