@@ -49,7 +49,7 @@
         <junit.version>4.12</junit.version>
         <zkclient.version>0.11</zkclient.version>
         <curator.framework.version>4.1.0</curator.framework.version>
-        <netty.version>4.1.31.Final</netty.version>
+        <netty.version>4.1.42.Final</netty.version>
         <javaassist.version>3.21.0-GA</javaassist.version>
         <dubbo.version>2.6.5</dubbo.version>
         <fastjson.version>1.2.54</fastjson.version>
