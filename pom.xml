@@ -43,7 +43,7 @@
         <yabo.service.version>1.0</yabo.service.version>
         <!--版本定义-->
         <commons.lang3.version>3.8.1</commons.lang3.version>
-        <commons.io.version>2.6</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <log4j.version>1.2.17</log4j.version>
         <commons.collections4.version>4.2</commons.collections4.version>
         <junit.version>4.12</junit.version>
